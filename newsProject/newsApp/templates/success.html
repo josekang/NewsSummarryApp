@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block navbar %}
+{% if user.is_authenticated %}
+  {% include "logged-nav.html" %}
+{% else %}
+  {% include "general-nav.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<h3>Thank you for getting in touch!</h3>
+<h5>We appreciate you contacting us. One of our customer
+   happiness members will be getting back to you shortly.<br><br>
+
+While we do our best to answer your queries quickly, it may take about 10 hours to receive a response
+ from us during peak hours.<br><br>
+
+Thanks in advance for your patience.<br><br>
+
+Have a great day!</h5>
+<img src="{% static 'img/thank.jpg' %}" alt="" style="border-radius:10px;"><br>
+<a href="{% url 'home' %}" class="btn btn-primary btn-small">Return To HomePage</a>
+
+{% endblock %}

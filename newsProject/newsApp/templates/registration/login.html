@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<!-- templates/registration/login.html -->
+<h2>Login</h2><br>
+<form method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <button type="submit" class="btn btn-primary btn-large">Login</button>
+  <p>Not Registerd?<a href="{% url 'signup-page'%}">Click here to Regiter</a></p>
+</form><br><br><br>
+{% endblock %}

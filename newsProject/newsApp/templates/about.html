@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block navbar %}
+{% if user.is_authenticated %}
+  {% include "logged-nav.html" %}
+{% else %}
+  {% include "general-nav.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<h2>Learn Something Nice About Us</h2>
+<img src="{% static 'img/ab.jpg' %}" alt="" width="550px" height="350px" style="border-radius:10px">
+<img src="{% static 'img/aba.webp' %}" alt="" width="550px" height="350px" style="border-radius:10px"><br><br>
+<p>Zetech News App is a digital news & media site of new generation. It embodies the era in
+  which it has been created: dynamic, informative, controversial, and entertaining. Delivering value
+  and high-quality information to our audience is our primary aim. The basic principles
+  for achieving this goal are given below:</p>
+
+    <ol>
+      <li>We are an independent source of information. We exist on funding from the school's media department
+         and we are not being financed or influenced by government, parties, or by private individuals.</li>
+      <li>Our aim is to collect information from all the available sources, systematise it and explain it
+        in a really understandable and neutral manner in English. As a result, we
+        provide high quality, reliable and affordable media products related to different spheres of people's
+        lives, including culture, education, technology and etc., for promoting knowledge, political stability
+        and economic prosperity.</li>
+        <li>All the stories at Zetech News Application avoid a single-sided reflection of the situation
+          (unless it is the author’s opinion). Our site is not liable for the author’s point of view, but,
+          at the same time we reserve the right to publish alternative visions, as long as they are not
+          considered to be propaganda, do not justify violence, do not lead to the sparking of enmity.</li>
+        <li>We always refer to the initial source of information and make a clear reference to it, whenever possible.</li>
+        <li>The editorial team makes every effort to verify the data. The facts in our articles are instantly
+          amended, so that maximum integrity, accuracy and precision are achieved. The users have an opportunity
+          to contribute to this process as well.</li>
+        <li>We take into consideration the versatility of readers' interests. Our Site takes into consideration
+          the versatility of its readers' interests. We are open for cooperation with independent contributors.
+          Information from readers, as well as reports from social media, is used on a regular basis.</li>
+    </ol>
+
+    <h4>We will try to be as transparent with you as possible!<br> Thanks for reading us!</h4>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block navbar %}
+{% if user.is_authenticated %}
+  {% include "logged-nav.html" %}
+{% else %}
+  {% include "general-nav.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>Contact Us</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary btn-large">Send</button>
+    </div>
+</form>
+
+{% endblock %}
